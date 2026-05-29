@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Casa de Repouso Fiorella – Cuidado humanizado para idosos em Curitiba e Colombo. Fisioterapia, musicoterapia, educador físico, nutricionista e convênio EcoSalva. Agende uma visita." />
+  <meta name="keywords" content="casa de repouso curitiba, lar de idosos curitiba, casa de repouso colombo, fisioterapia idosos curitiba, musicoterapia idosos, convênio ecosalva" />
+  <title>Casa de Repouso Fiorella | Cuidado com Amor em Curitiba e Colombo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bege: #F5EFE0; --bege-dark: #E8DCCA;
+      --rosa: #F2C4CE; --rosa-dark: #D9899A;
+      --mostarda: #C8923A; --mostarda-light: #F0D49A;
+      --texto: #3A2E28; --texto-suave: #7A6558;
+      --branco: #FFFDF8;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Lato', sans-serif; background: var(--branco); color: var(--texto); overflow-x: hidden; }
+
+    /* NAVBAR */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,253,248,0.96); backdrop-filter: blur(10px); border-bottom: 1px solid var(--bege-dark); padding: 0 5vw; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .nav-logo-wrap { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; }
+    .nav-logo-img { height: 50px; width: 50px; object-fit: contain; border-radius: 50%; }
+    .nav-logo-text { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: var(--mostarda); letter-spacing: 0.02em; line-height: 1.2; }
+    .nav-logo-text small { display: block; font-size: 0.65rem; color: var(--texto-suave); font-family: 'Lato', sans-serif; text-transform: uppercase; letter-spacing: 0.1em; }
+    .nav-links { display: flex; gap: 1.6rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--texto-suave); font-size: 0.82rem; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--mostarda); }
+    .nav-cta { background: var(--mostarda); color: var(--branco) !important; padding: 0.5rem 1.2rem; border-radius: 50px; transition: background 0.2s !important; }
+    .nav-cta:hover { background: #a8742e !important; }
+    .nav-toggle { display: none; cursor: pointer; font-size: 1.5rem; color: var(--texto); background: none; border: none; }
+
+    /* HERO */
+    .hero { min-height: 100vh; background: linear-gradient(160deg, var(--bege) 0%, var(--mostarda-light) 50%, var(--rosa) 100%); display: flex; align-items: center; padding: 100px 5vw 60px; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: -10%; right: -5%; width: 55vw; height: 55vw; max-width: 700px; max-height: 700px; background: radial-gradient(circle, rgba(242,196,206,0.45) 0%, transparent 70%); border-radius: 50%; }
+    .hero-logo-bg { position: absolute; right: 8vw; top: 50%; transform: translateY(-50%); width: min(38vw, 420px); opacity: 0.12; pointer-events: none; }
+    .hero-content { max-width: 600px; position: relative; animation: fadeUp 0.9s ease both; }
+    .hero-tag { display: inline-block; background: var(--rosa); color: var(--texto-suave); font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.35rem 1rem; border-radius: 50px; margin-bottom: 1.5rem; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 5vw, 3.8rem); line-height: 1.15; margin-bottom: 1.5rem; }
+    .hero h1 em { color: var(--mostarda); font-style: italic; }
+    .hero p { font-size: 1.1rem; line-height: 1.8; color: var(--texto-suave); margin-bottom: 2.5rem; max-width: 480px; }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary { background: var(--mostarda); color: var(--branco); padding: 0.9rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.95rem; letter-spacing: 0.03em; transition: all 0.2s; box-shadow: 0 4px 20px rgba(200,146,58,0.35); display: inline-block; }
+    .btn-primary:hover { background: #a8742e; transform: translateY(-2px); }
+    .btn-secondary { background: transparent; color: var(--texto); padding: 0.9rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 400; font-size: 0.95rem; border: 1.5px solid var(--texto); transition: all 0.2s; display: inline-block; }
+    .btn-secondary:hover { border-color: var(--mostarda); color: var(--mostarda); }
+    .hero-stats { display: flex; gap: 2.5rem; margin-top: 3.5rem; animation: fadeUp 0.9s 0.3s ease both; flex-wrap: wrap; }
+    .stat-item { text-align: center; }
+    .stat-num { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--mostarda); font-weight: 600; }
+    .stat-label { font-size: 0.75rem; color: var(--texto-suave); text-transform: uppercase; letter-spacing: 0.08em; }
+
+    /* GENÉRICO */
+    section { padding: 90px 5vw; }
+    .section-tag { display: inline-block; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mostarda); font-weight: 700; margin-bottom: 0.75rem; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem); line-height: 1.2; margin-bottom: 1.2rem; }
+    .section-sub { font-size: 1rem; line-height: 1.8; color: var(--texto-suave); max-width: 560px; margin-bottom: 3rem; }
+
+    /* SOBRE */
+    .sobre { background: var(--branco); }
+    .sobre-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5vw; align-items: center; }
+    .sobre-img-wrap { position: relative; }
+    .sobre-img-main { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 24px 4px 24px 4px; display: block; }
+    .sobre-badge { position: absolute; bottom: -1.5rem; right: -1.5rem; background: var(--mostarda); color: var(--branco); padding: 1.2rem 1.5rem; border-radius: 16px; text-align: center; box-shadow: 0 8px 30px rgba(200,146,58,0.3); }
+    .sobre-badge strong { display: block; font-family: 'Playfair Display', serif; font-size: 1.6rem; }
+    .sobre-badge span { font-size: 0.75rem; letter-spacing: 0.06em; opacity: 0.9; }
+    .pilares { display: flex; flex-direction: column; gap: 1.2rem; margin-top: 2rem; }
+    .pilar { display: flex; gap: 1rem; align-items: flex-start; padding: 1.2rem; background: var(--bege); border-radius: 12px; }
+    .pilar-icon { width: 44px; height: 44px; flex-shrink: 0; background: var(--rosa); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+    .pilar h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.2rem; }
+    .pilar p { font-size: 0.88rem; color: var(--texto-suave); line-height: 1.6; }
+
+    /* ATIVIDADES TERAPÊUTICAS */
+    .terapeuticas { background: var(--bege); }
+    .terapeuticas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+    .terapia-card { background: var(--branco); border-radius: 20px; padding: 2rem 1.5rem; text-align: center; transition: transform 0.25s, box-shadow 0.25s; border-top: 4px solid transparent; }
+    .terapia-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,0.09); border-top-color: var(--mostarda); }
+    .terapia-icon { font-size: 2.8rem; margin-bottom: 1rem; display: block; }
+    .terapia-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--texto); }
+    .terapia-card p { font-size: 0.85rem; color: var(--texto-suave); line-height: 1.7; }
+    .ecosalva-banner { margin-top: 3rem; background: linear-gradient(135deg, var(--mostarda) 0%, #a8742e 100%); border-radius: 20px; padding: 2rem 2.5rem; display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; }
+    .ecosalva-banner .eco-icon { font-size: 3rem; flex-shrink: 0; }
+    .ecosalva-banner h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--branco); margin-bottom: 0.4rem; }
+    .ecosalva-banner p { font-size: 0.92rem; color: rgba(255,255,255,0.85); line-height: 1.7; }
+
+    /* GALERIA */
+    .galeria { background: var(--branco); }
+    .galeria-grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: auto auto; gap: 1rem; }
+    .galeria-item { position: relative; overflow: hidden; border-radius: 16px; cursor: pointer; }
+    .galeria-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+    .galeria-item:hover img { transform: scale(1.05); }
+    .galeria-item .galeria-label { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(58,46,40,0.75)); color: #fff; padding: 1.5rem 1rem 0.8rem; font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0; transition: opacity 0.3s; }
+    .galeria-item:hover .galeria-label { opacity: 1; }
+    .galeria-item.tall { grid-row: span 2; }
+    .galeria-item.wide { grid-column: span 2; }
+    .galeria-item { aspect-ratio: 4/3; }
+    .galeria-item.tall { aspect-ratio: auto; }
+
+    /* LIGHTBOX */
+    .lightbox { display: none; position: fixed; inset: 0; z-index: 999; background: rgba(0,0,0,0.92); align-items: center; justify-content: center; padding: 1rem; }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 90vw; max-height: 88vh; border-radius: 12px; object-fit: contain; }
+    .lightbox-close { position: absolute; top: 1.5rem; right: 2rem; font-size: 2.5rem; color: #fff; cursor: pointer; line-height: 1; background: none; border: none; }
+    .lightbox-caption { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.75); font-size: 0.9rem; text-align: center; letter-spacing: 0.05em; text-transform: uppercase; }
+
+    /* SERVIÇOS */
+    .servicos { background: var(--bege); }
+    .servicos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+    .servico-card { background: var(--branco); border-radius: 20px; padding: 2rem 1.5rem; transition: transform 0.2s, box-shadow 0.2s; }
+    .servico-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,0.08); }
+    .servico-icon { width: 56px; height: 56px; background: var(--mostarda-light); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; margin-bottom: 1.2rem; }
+    .servico-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .servico-card p { font-size: 0.88rem; color: var(--texto-suave); line-height: 1.7; }
+
+    /* UNIDADES */
+    .unidades { background: var(--branco); }
+    .unidades-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .unidade-card { border: 2px solid var(--bege-dark); border-radius: 20px; overflow: hidden; transition: box-shadow 0.2s; }
+    .unidade-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.1); }
+    .unidade-card.matriz { border-color: var(--mostarda); }
+    .unidade-foto { width: 100%; height: 200px; object-fit: cover; display: block; }
+    .unidade-body { padding: 1.8rem; }
+    .unidade-badges { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.6rem; }
+    .badge { display: inline-block; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; padding: 0.25rem 0.7rem; border-radius: 50px; }
+    .badge-matriz { background: var(--mostarda); color: var(--branco); }
+    .badge-filial { background: var(--bege-dark); color: var(--texto-suave); }
+    .badge-feminino { background: var(--rosa); color: var(--rosa-dark); }
+    .badge-misto { background: var(--mostarda-light); color: #7a5a20; }
+    .unidade-body h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 0.8rem; }
+    .unidade-info { display: flex; flex-direction: column; gap: 0.6rem; margin-top: 1.2rem; }
+    .unidade-info-item { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.88rem; color: var(--texto-suave); line-height: 1.5; }
+    .unidade-info-item svg { flex-shrink: 0; margin-top: 2px; }
+    .destaque-local { background: var(--bege); border-left: 3px solid var(--mostarda); padding: 0.6rem 0.9rem; border-radius: 0 8px 8px 0; font-size: 0.83rem; color: var(--texto-suave); margin-top: 0.8rem; }
+    .destaque-local strong { color: var(--mostarda); }
+
+    /* DEPOIMENTOS */
+    .depoimentos { background: var(--bege); }
+    .dep-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .dep-card { background: var(--branco); border-radius: 20px; padding: 2rem; }
+    .dep-stars { color: var(--mostarda); font-size: 1rem; letter-spacing: 0.1em; margin-bottom: 1rem; }
+    .dep-text { font-size: 0.93rem; line-height: 1.8; color: var(--texto-suave); font-style: italic; margin-bottom: 1.5rem; }
+    .dep-author { display: flex; align-items: center; gap: 0.8rem; }
+    .dep-avatar { width: 42px; height: 42px; border-radius: 50%; background: var(--rosa); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--rosa-dark); font-size: 0.9rem; }
+    .dep-name { font-weight: 700; font-size: 0.9rem; }
+    .dep-role { font-size: 0.8rem; color: var(--texto-suave); }
+
+    /* CONTATO */
+    .contato { background: var(--branco); }
+    .contato-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5vw; align-items: start; }
+    .contato-info { display: flex; flex-direction: column; gap: 1rem; }
+    .contato-item { display: flex; gap: 1rem; align-items: flex-start; padding: 1.1rem; background: var(--bege); border-radius: 12px; }
+    .contato-item-icon { width: 42px; height: 42px; flex-shrink: 0; background: var(--mostarda); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
+    .contato-item h4 { font-size: 0.8rem; color: var(--texto-suave); margin-bottom: 0.2rem; text-transform: uppercase; letter-spacing: 0.06em; }
+    .contato-item p, .contato-item a { font-size: 0.93rem; font-weight: 700; color: var(--texto); text-decoration: none; }
+    .contato-item a:hover { color: var(--mostarda); }
+    .form-contato { display: flex; flex-direction: column; gap: 1rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form-group label { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--texto-suave); }
+    .form-group input, .form-group select, .form-group textarea { padding: 0.85rem 1rem; border: 1.5px solid var(--bege-dark); border-radius: 10px; font-family: 'Lato', sans-serif; font-size: 0.95rem; color: var(--texto); background: var(--branco); transition: border-color 0.2s; outline: none; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--mostarda); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .btn-form { background: var(--mostarda); color: var(--branco); border: none; padding: 1rem; border-radius: 50px; font-family: 'Lato', sans-serif; font-size: 1rem; font-weight: 700; cursor: pointer; transition: all 0.2s; }
+    .btn-form:hover { background: #a8742e; transform: translateY(-2px); }
+    .form-success { display: none; text-align: center; padding: 2rem; background: #edf7ee; border-radius: 12px; color: #2d6a30; }
+
+    /* MAPAS */
+    .mapa-section { background: var(--bege); padding: 0 5vw 70px; }
+    .mapa-titulo { text-align: center; padding: 60px 0 30px; }
+    .mapas-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .mapa-card { border-radius: 16px; overflow: hidden; box-shadow: 0 6px 30px rgba(0,0,0,0.1); }
+    .mapa-label { background: var(--mostarda); color: var(--branco); padding: 0.7rem 1.2rem; font-size: 0.85rem; font-weight: 700; display: flex; align-items: center; gap: 0.5rem; }
+    .mapa-label.filial-label { background: var(--rosa-dark); }
+    .mapa-card iframe { display: block; width: 100%; height: 300px; border: none; }
+
+    /* FOOTER */
+    footer { background: var(--texto); color: rgba(255,255,255,0.7); padding: 60px 5vw 30px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3vw; margin-bottom: 3rem; }
+    .footer-logo-wrap { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem; }
+    .footer-logo-img { width: 52px; height: 52px; border-radius: 50%; object-fit: contain; }
+    .footer-logo-text { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--mostarda-light); line-height: 1.2; }
+    .footer-logo-text small { display: block; font-size: 0.62rem; font-family: 'Lato', sans-serif; color: rgba(255,255,255,0.45); letter-spacing: 0.1em; text-transform: uppercase; }
+    .footer-brand p { font-size: 0.88rem; line-height: 1.8; max-width: 300px; }
+    .footer-col h4 { color: #fff; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .footer-col ul li a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--mostarda-light); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; flex-wrap: wrap; gap: 0.5rem; }
+
+    /* WHATSAPP */
+    .whatsapp-float { position: fixed; bottom: 2rem; right: 2rem; z-index: 200; width: 60px; height: 60px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 24px rgba(37,211,102,0.5); text-decoration: none; animation: pulse-green 2.5s infinite; }
+    .whatsapp-float svg { width: 30px; height: 30px; fill: #fff; }
+
+    /* ANIMAÇÕES */
+    @keyframes fadeUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes pulse-green { 0%,100% { box-shadow:0 6px 24px rgba(37,211,102,0.5); } 50% { box-shadow:0 6px 36px rgba(37,211,102,0.8); } }
+    .fade-in { opacity:0; transform:translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-in.visible { opacity:1; transform:translateY(0); }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .nav-links { display:none; flex-direction:column; position:absolute; top:72px; left:0; right:0; background:var(--branco); padding:1rem 5vw 2rem; border-bottom:1px solid var(--bege-dark); gap:1rem; }
+      .nav-links.open { display:flex; }
+      .nav-toggle { display:block; }
+      .sobre-grid, .contato-grid, .unidades-grid, .footer-grid, .mapas-grid { grid-template-columns:1fr; }
+      .form-row { grid-template-columns:1fr; }
+      .hero-stats { gap:1.5rem; }
+      .sobre-badge { right:0; bottom:-1rem; }
+      .hero-logo-bg { display:none; }
+      .galeria-grid { grid-template-columns: 1fr 1fr; }
+      .galeria-item.tall { grid-row: span 1; }
+      .galeria-item.wide { grid-column: span 2; }
+      .terapeuticas-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .galeria-grid { grid-template-columns: 1fr; }
+      .galeria-item.wide { grid-column: span 1; }
+      .terapeuticas-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="#inicio" class="nav-logo-wrap">
+    <img src="logo.png" alt="Logo Fiorella" class="nav-logo-img" />
+    <div class="nav-logo-text">
+      Casa de Repouso Fiorella
+      <small>Curitiba &amp; Colombo</small>
+    </div>
+  </a>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#terapeuticas">Atividades</a></li>
+    <li><a href="#galeria">Estrutura</a></li>
+    <li><a href="#unidades">Unidades</a></li>
+    <li><a href="#contato" class="nav-cta">Agende uma visita</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <img src="logo.png" alt="" class="hero-logo-bg" aria-hidden="true" />
+  <div class="hero-content">
+    <span class="hero-tag">🌸 Cuidado humanizado para idosos</span>
+    <h1>Um lar onde o <em>amor</em> faz parte da rotina</h1>
+    <p>A Casa de Repouso Fiorella oferece um ambiente seguro, acolhedor e cheio de carinho. Equipe multidisciplinar, atividades terapêuticas e convênio com a EcoSalva.</p>
+    <div class="hero-btns">
+      <a href="#contato" class="btn-primary">Agendar uma visita</a>
+      <a href="https://wa.me/5541997392997" target="_blank" class="btn-secondary">Falar no WhatsApp</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">2</div>
+        <div class="stat-label">Unidades</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">24h</div>
+        <div class="stat-label">Cuidado contínuo</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">6+</div>
+        <div class="stat-label">Especialidades</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+  <div class="sobre-grid">
+    <div class="sobre-img-wrap fade-in">
+      <img src="area_frente.jpeg" alt="Área da frente da Casa de Repouso Fiorella" class="sobre-img-main" />
+      <div class="sobre-badge">
+        <strong>Fiorella</strong>
+        <span>com amor e cuidado</span>
+      </div>
+    </div>
+    <div class="fade-in">
+      <span class="section-tag">Nossa história</span>
+      <h2 class="section-title">Cuidar com carinho é a nossa <em style="font-family:'Playfair Display',serif; color:var(--mostarda)">vocação</em></h2>
+      <p class="section-sub">A Casa de Repouso Fiorella é uma instituição dedicada ao cuidado de idosos, com foco em atenção humanizada, conforto e qualidade de vida. Dispomos de equipe qualificada, rotina organizada e um ambiente seguro, pensado para proporcionar bem-estar e tranquilidade aos residentes e suas famílias.</p>
+      <div class="pilares">
+        <div class="pilar">
+          <div class="pilar-icon">💜</div>
+          <div><h4>Atenção humanizada</h4><p>Cada residente é tratado com individualidade, respeito e muito afeto.</p></div>
+        </div>
+        <div class="pilar">
+          <div class="pilar-icon">🛡️</div>
+          <div><h4>Ambiente seguro</h4><p>Estrutura pensada para o bem-estar e a tranquilidade dos residentes e suas famílias.</p></div>
+        </div>
+        <div class="pilar">
+          <div class="pilar-icon">🌿</div>
+          <div><h4>Equipe multidisciplinar</h4><p>Fisioterapeutas, educador físico, musicoterapeuta, nutricionista e psiquiatra.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ATIVIDADES TERAPÊUTICAS -->
+<section class="terapeuticas" id="terapeuticas">
+  <div style="text-align:center; margin-bottom:3.5rem;" class="fade-in">
+    <span class="section-tag">Diferenciais da Fiorella</span>
+    <h2 class="section-title">Atividades <em style="font-family:'Playfair Display',serif; color:var(--mostarda)">terapêuticas</em> e cuidado especializado</h2>
+    <p class="section-sub" style="margin:0 auto;">Nossa equipe multidisciplinar promove saúde física, mental e emocional com atividades pensadas para cada residente.</p>
+  </div>
+  <div class="terapeuticas-grid">
+    <div class="terapia-card fade-in">
+      <span class="terapia-icon">🏃</span>
+      <h3>Educador Físico</h3>
+      <p>Exercícios adaptados que melhoram mobilidade, equilíbrio e qualidade de vida com acompanhamento personalizado.</p>
+    </div>
+    <div class="terapia-card fade-in">
+      <span class="terapia-icon">🦵</span>
+      <h3>Fisioterapia</h3>
+      <p>Atendimento fisioterapêutico para reabilitação, prevenção de quedas e manutenção da independência motora.</p>
+    </div>
+    <div class="terapia-card fade-in">
+      <span class="terapia-icon">🎵</span>
+      <h3>Musicoterapia</h3>
+      <p>Sessões de música que estimulam a memória, promovem alegria e fortalecem os vínculos entre os residentes.</p>
+    </div>
+    <div class="terapia-card fade-in">
+      <span class="terapia-icon">🥗</span>
+      <h3>Nutricionista</h3>
+      <p>Acompanhamento nutricional individualizado garantindo alimentação saudável, saborosa e adequada para cada necessidade.</p>
+    </div>
+    <div class="terapia-card fade-in">
+      <span class="terapia-icon">🧠</span>
+      <h3>Psiquiatra</h3>
+      <p>Acompanhamento psiquiátrico especializado para saúde mental, bem-estar emocional e qualidade de vida dos residentes.</p>
+    </div>
+    <div class="terapia-card fade-in">
+      <span class="terapia-icon">🤝</span>
+      <h3>Cuidadores 24h</h3>
+      <p>Equipe de cuidadores treinados presentes em todos os turnos para garantir atenção, segurança e conforto.</p>
+    </div>
+  </div>
+
+  <!-- ECOSALVA BANNER -->
+  <div class="ecosalva-banner fade-in">
+    <span class="eco-icon">🏥</span>
+    <div>
+      <h3>Convênio EcoSalva</h3>
+      <p>A Fiorella oferece atendimento médico em convênio com a <strong style="color:#fff;">EcoSalva</strong>, garantindo acesso facilitado a cuidados de saúde especializados para nossos residentes e suas famílias.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section class="galeria" id="galeria">
+  <div style="text-align:center; margin-bottom:3rem;" class="fade-in">
+    <span class="section-tag">Conheça nossa estrutura</span>
+    <h2 class="section-title">Um ambiente <em style="font-family:'Playfair Display',serif; color:var(--mostarda)">cuidado</em> para quem você ama</h2>
+    <p class="section-sub" style="margin:0 auto;">Clique nas fotos para ampliar e conhecer cada cantinho da Fiorella.</p>
+  </div>
+  <div class="galeria-grid fade-in">
+    <div class="galeria-item tall" onclick="openLightbox('fachada.jpeg','Fachada')">
+      <img src="fachada.jpeg" alt="Fachada da Casa de Repouso Fiorella" loading="lazy" />
+      <div class="galeria-label">Fachada</div>
+    </div>
+    <div class="galeria-item" onclick="openLightbox('area_frente.jpeg','Área da Frente')">
+      <img src="area_frente.jpeg" alt="Área da frente" loading="lazy" />
+      <div class="galeria-label">Área da Frente</div>
+    </div>
+    <div class="galeria-item" onclick="openLightbox('area_solar.jpeg','Área Solar')">
+      <img src="area_solar.jpeg" alt="Área solar" loading="lazy" />
+      <div class="galeria-label">Área Solar</div>
+    </div>
+    <div class="galeria-item wide" onclick="openLightbox('convivencia.jpeg','Sala de Convivência')">
+      <img src="convivencia.jpeg" alt="Sala de convivência" loading="lazy" />
+      <div class="galeria-label">Sala de Convivência</div>
+    </div>
+    <div class="galeria-item" onclick="openLightbox('refeitorio.jpeg','Refeitório')">
+      <img src="refeitorio.jpeg" alt="Refeitório" loading="lazy" />
+      <div class="galeria-label">Refeitório</div>
+    </div>
+    <div class="galeria-item" onclick="openLightbox('quarto.jpeg','Quarto')">
+      <img src="quarto.jpeg" alt="Quarto" loading="lazy" />
+      <div class="galeria-label">Quarto</div>
+    </div>
+    <div class="galeria-item" onclick="openLightbox('banheiro.jpeg','Banheiro Adaptado')">
+      <img src="banheiro.jpeg" alt="Banheiro adaptado" loading="lazy" />
+      <div class="galeria-label">Banheiro Adaptado</div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightbox-img" src="" alt="" onclick="event.stopPropagation()" />
+  <div class="lightbox-caption" id="lightbox-caption"></div>
+</div>
+
+<!-- SERVIÇOS -->
+<section class="servicos" id="servicos">
+  <div style="text-align:center; margin-bottom:3.5rem;" class="fade-in">
+    <span class="section-tag">O que oferecemos</span>
+    <h2 class="section-title">Serviços e cuidados <em style="font-family:'Playfair Display',serif; color:var(--mostarda)">completos</em></h2>
+    <p class="section-sub" style="margin:0 auto;">Tudo o que seu familiar precisa para viver com saúde, segurança e alegria em um só lugar.</p>
+  </div>
+  <div class="servicos-grid">
+    <div class="servico-card fade-in"><div class="servico-icon">🩺</div><h3>Cuidados de saúde</h3><p>Acompanhamento contínuo com equipe qualificada, monitoramento de saúde e suporte 24 horas.</p></div>
+    <div class="servico-card fade-in"><div class="servico-icon">🍽️</div><h3>Alimentação balanceada</h3><p>Cardápio nutritivo e saboroso com acompanhamento de nutricionista, adaptado a cada residente.</p></div>
+    <div class="servico-card fade-in"><div class="servico-icon">🎨</div><h3>Atividades recreativas</h3><p>Programação de convivência, lazer e estimulação cognitiva para manter a mente ativa e o espírito alegre.</p></div>
+    <div class="servico-card fade-in"><div class="servico-icon">🛁</div><h3>Higiene e bem-estar</h3><p>Cuidados pessoais, banho assistido e toda atenção à higiene e conforto dos residentes.</p></div>
+    <div class="servico-card fade-in"><div class="servico-icon">👨‍👩‍👧</div><h3>Suporte à família</h3><p>Canal aberto de comunicação, visitas agendadas e relatórios regulares sobre os residentes.</p></div>
+    <div class="servico-card fade-in"><div class="servico-icon">🌙</div><h3>Atendimento 24h</h3><p>Equipe presente em todos os turnos para garantir segurança, conforto e cuidado a qualquer hora.</p></div>
+  </div>
+</section>
+
+<!-- UNIDADES -->
+<section class="unidades" id="unidades">
+  <div style="text-align:center; margin-bottom:3.5rem;" class="fade-in">
+    <span class="section-tag">Onde estamos</span>
+    <h2 class="section-title">Nossas <em style="font-family:'Playfair Display',serif; color:var(--mostarda)">unidades</em> em Curitiba e Colombo</h2>
+  </div>
+  <div class="unidades-grid">
+    <div class="unidade-card matriz fade-in">
+      <img src="fachada.jpeg" alt="Fiorella Colombo" class="unidade-foto" />
+      <div class="unidade-body">
+        <div class="unidade-badges">
+          <span class="badge badge-matriz">⭐ Matriz</span>
+          <span class="badge badge-misto">Unidade mista</span>
+        </div>
+        <h3>Fiorella Colombo</h3>
+        <p style="font-size:0.9rem; color:var(--texto-suave); line-height:1.7;">Nossa unidade principal em Colombo. Recebe idosos e idosas com toda a qualidade e cuidado da Fiorella.</p>
+        <div class="unidade-info">
+          <div class="unidade-info-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            Rua Vergílio Mezzomo, 405 – Canguiri, Colombo/PR
+          </div>
+          <div class="unidade-info-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 012.1 5.18 2 2 0 014.08 3h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 10.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 17.92z"/></svg>
+            (41) 3606-1447 | (41) 9739-2997
+          </div>
+        </div>
+        <a href="https://wa.me/5541997392997?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20Unidade%20Colombo." target="_blank" style="margin-top:1.4rem;" class="btn-primary">Entrar em contato</a>
+      </div>
+    </div>
+    <div class="unidade-card fade-in">
+      <img src="area_frente.jpeg" alt="Fiorella Boa Vista" class="unidade-foto" />
+      <div class="unidade-body">
+        <div class="unidade-badges">
+          <span class="badge badge-filial">Filial</span>
+          <span class="badge badge-feminino">Unidade feminina</span>
+        </div>
+        <h3>Fiorella Boa Vista</h3>
+        <p style="font-size:0.9rem; color:var(--texto-suave); line-height:1.7;">Nossa unidade no bairro Boa Vista, em Curitiba. Dedicada exclusivamente ao cuidado de mulheres idosas.</p>
+        <div class="unidade-info">
+          <div class="unidade-info-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            Rua Lodovico Geronazzo, 738 – Boa Vista, Curitiba/PR
+          </div>
+          <div class="unidade-info-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 012.1 5.18 2 2 0 014.08 3h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 10.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 17.92z"/></svg>
+            (41) 3088-4069 | (41) 9739-2997
+          </div>
+        </div>
+        <div class="destaque-local">📍 <strong>Localização privilegiada</strong> — em frente ao Supermercado Condor, Boa Vista.</div>
+        <a href="https://wa.me/5541997392997?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20Unidade%20Boa%20Vista." target="_blank" style="margin-top:1.4rem;" class="btn-primary">Entrar em contato</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="depoimentos" id="depoimentos">
+  <div style="text-align:center; margin-bottom:3.5rem;" class="fade-in">
+    <span class="section-tag">Famílias que confiam</span>
+    <h2 class="section-title">O que dizem sobre a <em style="font-family:'Playfair Display',serif; color:var(--mostarda)">Fiorella</em></h2>
+  </div>
+  <div class="dep-grid">
+    <div class="dep-card fade-in">
+      <div class="dep-stars">★★★★★</div>
+      <p class="dep-text">"Minha mãe está na Fiorella há mais de um ano e ficamos muito tranquilos com a qualidade do cuidado. A equipe é carinhosa e sempre nos mantém informados."</p>
+      <div class="dep-author"><div class="dep-avatar">AM</div><div><div class="dep-name">Ana M.</div><div class="dep-role">Filha de residente</div></div></div>
+    </div>
+    <div class="dep-card fade-in">
+      <div class="dep-stars">★★★★★</div>
+      <p class="dep-text">"Um ambiente limpo, seguro e muito acolhedor. Minha avó adaptou-se muito bem e hoje está mais alegre e ativa do que nunca. Recomendo de coração."</p>
+      <div class="dep-author"><div class="dep-avatar">CS</div><div><div class="dep-name">Carla S.</div><div class="dep-role">Neta de residente</div></div></div>
+    </div>
+    <div class="dep-card fade-in">
+      <div class="dep-stars">★★★★★</div>
+      <p class="dep-text">"Desde o primeiro contato até hoje, a Fiorella nos recebeu com atenção e profissionalismo. É uma família cuidando de outra família."</p>
+      <div class="dep-author"><div class="dep-avatar">MR</div><div><div class="dep-name">Marcos R.</div><div class="dep-role">Familiar de residente</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section class="contato" id="contato">
+  <div class="contato-grid">
+    <div class="fade-in">
+      <span class="section-tag">Fale conosco</span>
+      <h2 class="section-title">Agende uma <em style="font-family:'Playfair Display',serif; color:var(--mostarda)">visita</em></h2>
+      <p class="section-sub">Será um prazer receber você. Venha conhecer nossa estrutura e tirar todas as suas dúvidas pessoalmente.</p>
+      <div class="contato-info">
+        <div class="contato-item"><div class="contato-item-icon">💬</div><div><h4>WhatsApp</h4><a href="https://wa.me/5541997392997" target="_blank">(41) 9739-2997</a></div></div>
+        <div class="contato-item"><div class="contato-item-icon">⭐</div><div><h4>Matriz — Colombo (fixo)</h4><a href="tel:4136061447">(41) 3606-1447</a></div></div>
+        <div class="contato-item"><div class="contato-item-icon">📞</div><div><h4>Filial — Boa Vista (fixo)</h4><a href="tel:4130884069">(41) 3088-4069</a></div></div>
+        <div class="contato-item"><div class="contato-item-icon">📍</div><div><h4>Filial — Boa Vista, Curitiba</h4><p>Rua Lodovico Geronazzo, 738 – em frente ao Condor</p></div></div>
+      </div>
+    </div>
+    <div class="fade-in">
+      <form class="form-contato" id="formContato" action="https://formspree.io/f/SEU_ID_AQUI" method="POST">
+        <div class="form-row">
+          <div class="form-group"><label for="nome">Seu nome</label><input type="text" id="nome" name="nome" placeholder="Maria Silva" required /></div>
+          <div class="form-group"><label for="telefone">WhatsApp / Telefone</label><input type="tel" id="telefone" name="telefone" placeholder="(41) 99999-9999" required /></div>
+        </div>
+        <div class="form-group"><label for="email">E-mail</label><input type="email" id="email" name="email" placeholder="seu@email.com" /></div>
+        <div class="form-group">
+          <label for="unidade">Unidade de interesse</label>
+          <select id="unidade" name="unidade">
+            <option value="">Selecione uma unidade</option>
+            <option value="colombo">Colombo – Matriz (mista)</option>
+            <option value="boa-vista">Boa Vista – Filial (feminina)</option>
+            <option value="ambas">Ambas / Indiferente</option>
+          </select>
+        </div>
+        <div class="form-group"><label for="mensagem">Mensagem</label><textarea id="mensagem" name="mensagem" placeholder="Conte um pouco sobre o que você precisa..."></textarea></div>
+        <button type="submit" class="btn-form">Enviar mensagem ✉️</button>
+      </form>
+      <div class="form-success" id="formSuccess">
+        <p style="font-size:1.5rem; margin-bottom:0.5rem;">🌸</p>
+        <p style="font-weight:700; font-size:1.1rem;">Mensagem enviada!</p>
+        <p style="font-size:0.9rem; margin-top:0.5rem;">Entraremos em contato em breve. Será um prazer receber você na Fiorella.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAPAS -->
+<div class="mapa-section">
+  <div class="mapa-titulo fade-in">
+    <span class="section-tag">Como nos encontrar</span>
+    <h2 class="section-title">Nossas <em style="font-family:'Playfair Display',serif; color:var(--mostarda)">localizações</em></h2>
+  </div>
+  <div class="mapas-grid fade-in">
+    <div class="mapa-card">
+      <div class="mapa-label">⭐ Matriz — Colombo (Canguiri)</div>
+      <iframe src="https://maps.google.com/maps?q=Rua+Virg%C3%ADlio+Mezzomo+405+Canguiri+Colombo+PR&output=embed&hl=pt-BR&z=16" allowfullscreen="" loading="lazy" title="Mapa Fiorella Colombo"></iframe>
+    </div>
+    <div class="mapa-card">
+      <div class="mapa-label filial-label">📍 Filial — Boa Vista, Curitiba (em frente ao Condor)</div>
+      <iframe src="https://maps.google.com/maps?q=Rua+Lodovico+Geronazzo+738+Boa+Vista+Curitiba+PR+82560-040&output=embed&hl=pt-BR&z=16" allowfullscreen="" loading="lazy" title="Mapa Fiorella Boa Vista"></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo-wrap">
+        <img src="logo.png" alt="Logo Fiorella" class="footer-logo-img" />
+        <div class="footer-logo-text">Casa de Repouso Fiorella<small>Curitiba &amp; Colombo — PR</small></div>
+      </div>
+      <p>Cuidado humanizado, equipe multidisciplinar e um lar acolhedor. Convênio EcoSalva. Unidade mista em Colombo e unidade feminina no Boa Vista.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navegação</h4>
+      <ul>
+        <li><a href="#sobre">Sobre nós</a></li>
+        <li><a href="#terapeuticas">Atividades terapêuticas</a></li>
+        <li><a href="#galeria">Estrutura</a></li>
+        <li><a href="#unidades">Unidades</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contato</h4>
+      <ul>
+        <li><a href="https://wa.me/5541997392997" target="_blank">WhatsApp: (41) 9739-2997</a></li>
+        <li><a href="tel:4136061447">Colombo: (41) 3606-1447</a></li>
+        <li><a href="tel:4130884069">Boa Vista: (41) 3088-4069</a></li>
+        <li><a href="#unidades">Colombo – Matriz</a></li>
+        <li><a href="#unidades">Boa Vista – Filial</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Casa de Repouso Fiorella. Todos os direitos reservados.</span>
+    <span>Curitiba &amp; Colombo – PR</span>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLUTUANTE -->
+<a href="https://wa.me/5541997392997?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20Casa%20de%20Repouso%20Fiorella." class="whatsapp-float" target="_blank" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+  // MENU MOBILE
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  // SCROLL ANIMATIONS
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // LIGHTBOX
+  function openLightbox(src, caption) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox-caption').textContent = caption;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => { if(e.key === 'Escape') closeLightbox(); });
+
+  // FORMULÁRIO
+  const form = document.getElementById('formContato');
+  const success = document.getElementById('formSuccess');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    try {
+      const res = await fetch(form.action, { method:'POST', body: data, headers:{ 'Accept':'application/json' } });
+      if(res.ok) { form.style.display = 'none'; success.style.display = 'block'; }
+      else { alert('Erro ao enviar. Tente pelo WhatsApp: (41) 9739-2997'); }
+    } catch { alert('Erro de conexão. Tente pelo WhatsApp: (41) 9739-2997'); }
+  });
+</script>
+</body>
+</html>
