@@ -19,7 +19,8 @@
   <link rel="apple-touch-icon" href="favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" /></noscript>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -297,7 +298,7 @@
 <section class="sobre" id="sobre">
   <div class="sobre-grid">
     <div class="sobre-img-wrap fade-in">
-      <img src="area_frente.jpeg" alt="Área da frente da Casa de Repouso Fiorella" class="sobre-img-main" />
+      <img src="area_frente.webp" alt="Área da frente da Casa de Repouso Fiorella" class="sobre-img-main" />
       <div class="sobre-badge">
         <strong>Fiorella</strong>
         <span>com amor e cuidado</span>
@@ -389,31 +390,31 @@
   </div>
   <div class="galeria-grid fade-in">
     <div class="galeria-item tall" onclick="openLightbox('fachada.jpeg','Fachada')">
-      <img src="fachada.jpeg" alt="Fachada da Casa de Repouso Fiorella" loading="lazy" />
+      <img src="fachada.webp" alt="Fachada da Casa de Repouso Fiorella" loading="lazy" />
       <div class="galeria-label">Fachada</div>
     </div>
     <div class="galeria-item" onclick="openLightbox('area_frente.jpeg','Área da Frente')">
-      <img src="area_frente.jpeg" alt="Área da frente" loading="lazy" />
+      <img src="area_frente.webp" alt="Área da frente" loading="lazy" />
       <div class="galeria-label">Área da Frente</div>
     </div>
     <div class="galeria-item" onclick="openLightbox('area_solar.jpeg','Área Solar')">
-      <img src="area_solar.jpeg" alt="Área solar" loading="lazy" />
+      <img src="area_solar.webp" alt="Área solar" loading="lazy" />
       <div class="galeria-label">Área Solar</div>
     </div>
     <div class="galeria-item wide" onclick="openLightbox('convivencia.jpeg','Sala de Convivência')">
-      <img src="convivencia.jpeg" alt="Sala de convivência" loading="lazy" />
+      <img src="convivencia.webp" alt="Sala de convivência" loading="lazy" />
       <div class="galeria-label">Sala de Convivência</div>
     </div>
     <div class="galeria-item" onclick="openLightbox('refeitorio.jpeg','Refeitório')">
-      <img src="refeitorio.jpeg" alt="Refeitório" loading="lazy" />
+      <img src="refeitorio.webp" alt="Refeitório" loading="lazy" />
       <div class="galeria-label">Refeitório</div>
     </div>
     <div class="galeria-item" onclick="openLightbox('quarto.jpeg','Quarto')">
-      <img src="quarto.jpeg" alt="Quarto" loading="lazy" />
+      <img src="quarto.webp" alt="Quarto" loading="lazy" />
       <div class="galeria-label">Quarto</div>
     </div>
     <div class="galeria-item" onclick="openLightbox('banheiro.jpeg','Banheiro Adaptado')">
-      <img src="banheiro.jpeg" alt="Banheiro adaptado" loading="lazy" />
+      <img src="banheiro.webp" alt="Banheiro adaptado" loading="lazy" />
       <div class="galeria-label">Banheiro Adaptado</div>
     </div>
   </div>
@@ -451,7 +452,7 @@
   </div>
   <div class="unidades-grid">
     <div class="unidade-card matriz fade-in">
-      <img src="fachada_colombo.jpeg" alt="Fachada Casa de Repouso Fiorella Colombo" class="unidade-foto" />
+      <img src="fachada_colombo.webp" alt="Fachada Casa de Repouso Fiorella Colombo" class="unidade-foto" />
       <div class="unidade-body">
         <div class="unidade-badges">
           <span class="badge badge-matriz">⭐ Matriz</span>
@@ -473,7 +474,7 @@
       </div>
     </div>
     <div class="unidade-card fade-in">
-      <img src="fachada.jpeg" alt="Fachada Casa de Repouso Fiorella Boa Vista" class="unidade-foto" />
+      <img src="fachada.webp" alt="Fachada Casa de Repouso Fiorella Boa Vista" class="unidade-foto" />
       <div class="unidade-body">
         <div class="unidade-badges">
           <span class="badge badge-filial">Filial</span>
@@ -509,7 +510,7 @@
   <!-- Widget Google Reviews -->
   <div class="fade-in" style="margin-bottom: 3rem; max-width: 900px; margin-left: auto; margin-right: auto;">
     <!-- Elfsight Google Reviews | Untitled Google Reviews -->
-    <script src="https://elfsightcdn.com/platform.js" async></script>
+    <script src="https://elfsightcdn.com/platform.js" async defer></script>
     <div class="elfsight-app-27168638-39f5-479b-96f2-f00236344ae5" data-elfsight-app-lazy></div>
   </div>
 
