@@ -116,8 +116,8 @@
 
     /* LIGHTBOX */
     .lightbox { display: none; position: fixed; inset: 0; z-index: 999; background: rgba(0,0,0,0.92); align-items: center; justify-content: center; padding: 1rem; }
-    .lightbox.open { display: flex; }
-    .lightbox img { max-width: 90vw; max-height: 88vh; border-radius: 12px; object-fit: contain; }
+    .lightbox.open { display: flex !important; }
+    .lightbox img { max-width: 90vw; max-height: 88vh; border-radius: 12px; object-fit: contain; display: block; background: #fff; }
     .lightbox-close { position: absolute; top: 1.5rem; right: 2rem; font-size: 2.5rem; color: #fff; cursor: pointer; line-height: 1; background: none; border: none; }
     .lightbox-caption { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.75); font-size: 0.9rem; text-align: center; letter-spacing: 0.05em; text-transform: uppercase; }
 
@@ -389,31 +389,31 @@
     <p class="section-sub" style="margin:0 auto;">Clique nas fotos para ampliar e conhecer cada cantinho da Fiorella.</p>
   </div>
   <div class="galeria-grid fade-in">
-    <div class="galeria-item tall" onclick="openLightbox('fachada.jpeg','Fachada')">
+    <div class="galeria-item tall" onclick="openLightbox('fachada.webp','Fachada')">
       <img src="fachada.webp" alt="Fachada da Casa de Repouso Fiorella" loading="lazy" />
       <div class="galeria-label">Fachada</div>
     </div>
-    <div class="galeria-item" onclick="openLightbox('area_frente.jpeg','Área da Frente')">
+    <div class="galeria-item" onclick="openLightbox('area_frente.webp','Área da Frente')">
       <img src="area_frente.webp" alt="Área da frente" loading="lazy" />
       <div class="galeria-label">Área da Frente</div>
     </div>
-    <div class="galeria-item" onclick="openLightbox('area_solar.jpeg','Área Solar')">
+    <div class="galeria-item" onclick="openLightbox('area_solar.webp','Área Solar')">
       <img src="area_solar.webp" alt="Área solar" loading="lazy" />
       <div class="galeria-label">Área Solar</div>
     </div>
-    <div class="galeria-item wide" onclick="openLightbox('convivencia.jpeg','Sala de Convivência')">
+    <div class="galeria-item wide" onclick="openLightbox('convivencia.webp','Sala de Convivência')">
       <img src="convivencia.webp" alt="Sala de convivência" loading="lazy" />
       <div class="galeria-label">Sala de Convivência</div>
     </div>
-    <div class="galeria-item" onclick="openLightbox('refeitorio.jpeg','Refeitório')">
+    <div class="galeria-item" onclick="openLightbox('refeitorio.webp','Refeitório')">
       <img src="refeitorio.webp" alt="Refeitório" loading="lazy" />
       <div class="galeria-label">Refeitório</div>
     </div>
-    <div class="galeria-item" onclick="openLightbox('quarto.jpeg','Quarto')">
+    <div class="galeria-item" onclick="openLightbox('quarto.webp','Quarto')">
       <img src="quarto.webp" alt="Quarto" loading="lazy" />
       <div class="galeria-label">Quarto</div>
     </div>
-    <div class="galeria-item" onclick="openLightbox('banheiro.jpeg','Banheiro Adaptado')">
+    <div class="galeria-item" onclick="openLightbox('banheiro.webp','Banheiro Adaptado')">
       <img src="banheiro.webp" alt="Banheiro adaptado" loading="lazy" />
       <div class="galeria-label">Banheiro Adaptado</div>
     </div>
